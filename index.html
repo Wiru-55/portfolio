@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MACK DSGN Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <section class="cont-l">
+            <div id="logo">
+                <img src="img/logo/logo.png" alt="">
+            </div>
+        </section>
+       
+        <nav>
+                <a href="#des">ABOUT</a>
+                <a href="#B-D">THE BEST</a>
+                <a href="#dsgns">DSGNS</a>
+        </nav>
+    </header>
+
+    <div id="cont">
+        <section id="Des">
+            <div class="bg-des">
+                <div class="photo">
+                    <img src="img/Foto.png" alt="">
+                </div>
+                <div class="text">
+                    <fieldset>
+
+                    </fieldset>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="B-D">
+        <div class="container">
+            <div class="slider">
+                <div class="slides" style="--img: url('img/slider/img-4.jpg')">
+                    <div class="content">
+                        
+                    </div>
+                </div>
+                <div class="slides" style="--img: url('img/slider/img-1.jpg')"> 
+                    <div class="content"></div>
+                </div>
+                <div class="slides" style="--img: url('img/slider/img-2.jpg')">
+                    <div class="content"></div>
+                </div>
+                <div class="slides" style="--img: url('img/slider/img-3.jpg')">
+                    <div class="content"></div>
+                </div>
+                <div class="slides" style="--img: url('img/slider/img-5.jpg')">
+                    <div class="content"></div>
+                </div>
+                <div class="slides" style="--img: url('img/slider/img-6.jpg')">
+                    <div class="content"></div>
+                </div>
+            </div>
+            <div class="bg-slider">
+                <div class="bg-s" style="--img: url('img/slider/img-1.jpg')"></div>
+            </div>
+            
+        </div>
+        <div class="buttons">
+            <span class="prev"></span>
+            <span class="next"></span>
+        </div>
+        <script>
+            let next = document.querySelector('.next');
+            let prev = document.querySelector('.prev');
+            let slider = document.querySelector('.slider');
+            let bgs = document.querySelector('.bg-s');
+    
+            let slides = document.querySelectorAll('.slides');
+            bgs.style.backgroundImage = slides[1].style.getPropertyValue('--img')
+    
+    
+            next.addEventListener('click', function(){
+                let slides = document.querySelectorAll('.slides');
+                slider.appendChild(slides[0]);
+    
+                let nextImage = slides[2].style.getPropertyValue('--img');
+                bgs.style.backgroundImage = nextImage;
+            })
+    
+            prev.addEventListener('click', function(){
+                let slides = document.querySelectorAll('.slides');
+                slider.prepend(slides[slides.length - 1]);
+    
+                let prevImage = slides[0].style.getPropertyValue('--img');
+                bgs.style.backgroundImage = prevImage;
+            })
+        </script>
+    
+        </section>
+
+
+        <section id="dsgns">
+            <div class="dsg">
+                <h2>ILUSTRACIONES</h2>
+
+                <div class="foto"><a href="">  <img src="img/ilustraciones/il-1.jpg" alt="">  </a></div>
+                <div class="foto"><a href="">  <img src="img/ilustraciones/il-2.jpg" alt="">  </a></div>
+                <div class="foto"><a href="">  <img src="img/ilustraciones/il-3.jpg" alt="">  </a></div>
+                <div class="foto"><a href="">  <img src="img/ilustraciones/il-5.jpg" alt="">  </a></div>
+
+            </div>
+            <div class="dsg">
+                <h2>COVER ARTS</h2>
+                <div class="foto2"><a href="">  <img src="img/cover/c-1.jpg" alt="">  </a></div>
+                <div class="foto2"><a href="">  <img src="img/cover/c-2.jpg" alt="">  </a></div>
+                <div class="foto2"><a href="">  <img src="img/cover/c-3.jpg" alt="">  </a></div>
+                <div class="foto2"><a href="">  <img src="img/cover/c-4.jpg" alt="">  </a></div>
+            </div>
+            <div class="dsg">
+                <h2>LOGOS</h2>
+                <div class="foto3"><a href="">  <img src="img/logos/l-1.jpg" alt="">  </a></div>
+                <div class="foto3"><a href="">  <img src="img/logos/l-2.jpg" alt="">  </a></div>
+                <div class="foto3"><a href="">  <img src="img/logos/l-3.jpg" alt="">  </a></div>
+                <div class="foto3"><a href="">  <img src="img/logos/l-4.jpg" alt="">  </a></div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
